@@ -18,13 +18,6 @@ Feature.init(
       allowNull: false,
     },
   
-    trail_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: "Trail",
-          key: "id",
-        },
-      },
   },
   {
     sequelize,
