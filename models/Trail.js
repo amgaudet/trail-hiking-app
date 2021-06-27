@@ -32,6 +32,7 @@ Trail.init(
     pet_friendly: {
         type: DataTypes.BOOLEAN, 
         allowNull: false,
+        defaultValue: false,
     },
     elevation_gain: {
         type: DataTypes.INTEGER,
