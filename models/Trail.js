@@ -37,6 +37,10 @@ Trail.init(
         type: DataTypes.INTEGER,
         allowNull: false,
       },
+      type: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    }, 
 
     location_id: {
         type: DataTypes.INTEGER,
@@ -45,6 +49,11 @@ Trail.init(
           key: "id",
         },
       },
+    approved: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
+    }, 
   },
   {
     sequelize,
