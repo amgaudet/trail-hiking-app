@@ -1,7 +1,7 @@
 const { unlinkSync } = require ('fs');
 const router = require ('express').Router();
 const { upload, uploadToCloudinary } = require ('../controllers/upload');
-const db = require ('../models');
+const { Gallery } = require ('../models');
 
 
 
@@ -17,7 +17,7 @@ const db = require ('../models');
         image_url: result.secure_url
     };
 
-    const item = await db.Trail.create (data);
+    const item = await Gallery.create (data);
 
     if (item) {
         return res.json(item);
@@ -26,9 +26,11 @@ const db = require ('../models');
  }
 
  router.get ('/', async (req, res) => {
-     const imageData = await db.Trail.findAll({});
+     const imageData = await Gallery.findAll({});
      const photos = imageData.map(item => item.get({ plain: true }));
-     res.render('home', { photos });
+
+     //need to figure out where we are rendering in the handlebars
+    //  res.render('home', { photos });
  })
 //we need to come back to this so we can add the right handlebars page in
  module.exports = router;
