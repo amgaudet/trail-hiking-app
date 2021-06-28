@@ -29,7 +29,7 @@ Trail.init(
         type: DataTypes.STRING,
         allowNull: false,
     }, 
-    pet_friendly: {
+    dog_friendly: {
         type: DataTypes.BOOLEAN, 
         allowNull: false,
         defaultValue: false,
@@ -50,6 +50,10 @@ Trail.init(
           key: "id",
         },
       },
+    
+    image_url: {
+      type: DataTypes.STRING,
+    }, 
     approved: {
       type: DataTypes.BOOLEAN,
       allowNull: false,

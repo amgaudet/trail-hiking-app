@@ -4,6 +4,7 @@ const Location = require("./Location");
 const Feature = require("./Feature");
 const User = require("./User");
 const TrailFeature = require("./TrailFeature");
+const db = {};
 
 // Trail belongsTo Location
 Trail.belongsTo(Location, {
@@ -38,4 +39,7 @@ module.exports = {
   User,
   Feature,
   TrailFeature,
+  
 };
+
+module.exports = db;
