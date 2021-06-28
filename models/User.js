@@ -37,6 +37,12 @@ User.init(
     },
   },
   {
+    hooks: {
+      async beforeCreate(userData) {
+        userData.password = await bcrypt.hash(userData.password, 10);
+        return userData;
+      },
+    },
     sequelize,
     timestamps: false,
     freezeTableName: true,
