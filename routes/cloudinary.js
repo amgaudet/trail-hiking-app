@@ -8,7 +8,7 @@ const db = require ('../models');
 
  router.post('/api/upload'), upload, async (req, res) => {
     const { file } = req;
-    const result = await uploadToCloudinary(file.path, { folder: 'images' });
+    const result = await uploadToCloudinary(file.path, { folder: 'Trails' });
 
     if (file) unlinkSync(file.path);
 

@@ -50,10 +50,8 @@ Trail.init(
           key: "id",
         },
       },
-    
-    image_url: {
-      type: DataTypes.STRING,
-    }, 
+   
+   
     approved: {
       type: DataTypes.BOOLEAN,
       allowNull: false,

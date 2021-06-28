@@ -2,6 +2,7 @@ const seedLocations = require('./location-seeds');
 const seedTrails = require('./trail-seeds');
 const seedFeatures = require('./feature-seeds');
 const seedTrailFeatures = require('./trail-feature-seeds');
+const seedGallery =  require('./gallery-seeds');
 
 const sequelize = require('../config/connection');
 
@@ -19,6 +20,9 @@ const seedAll = async () => {
 
   await seedTrailFeatures();
   console.log('\n----- TRAIL FEATURES SEEDED -----\n');
+
+  await seedGallery();
+  console.log('\n----- GALLERY SEEDED -----\n');
 
   process.exit(0);
 };

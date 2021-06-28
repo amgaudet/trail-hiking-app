@@ -4,7 +4,8 @@ const Location = require("./Location");
 const Feature = require("./Feature");
 const User = require("./User");
 const TrailFeature = require("./TrailFeature");
-const db = {};
+const Gallery = require('./Gallery');
+
 
 // Trail belongsTo Location
 Trail.belongsTo(Location, {
@@ -32,6 +33,11 @@ Feature.belongsToMany(Trail, {
   foreignKey: "feature_id",
 });
 
+Trail.hasMany(Gallery, {
+  foreignKey: 'gallery_id',
+  onDelete: 'CASCADE',
+});
+
 
 module.exports = {
   Trail,
@@ -39,7 +45,8 @@ module.exports = {
   User,
   Feature,
   TrailFeature,
+  Gallery
   
 };
 
-module.exports = db;
+
