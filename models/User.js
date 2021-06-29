@@ -36,15 +36,6 @@ User.init(
       },
     },
 
-    fav_trail: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: "Trail",
-        key: "id",
-      },
-
-    },
   },
   {
     hooks: {

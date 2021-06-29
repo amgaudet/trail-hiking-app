@@ -38,10 +38,6 @@ Trail.hasMany(Gallery, {
   onDelete: 'CASCADE',
 });
 
-User.hasMany(Trail, {
-  foreignKey: 'trail_id',
-})
-
 
 module.exports = {
   Trail,
