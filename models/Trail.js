@@ -50,8 +50,13 @@ Trail.init(
           key: "id",
         },
       },
-   
-   
+
+      latitude: {
+        type: DataTypes.INTEGER,
+  },
+  longitude: {
+    type: DataTypes.INTEGER,
+  },
     approved: {
       type: DataTypes.BOOLEAN,
       allowNull: false,

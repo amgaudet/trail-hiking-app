@@ -37,8 +37,13 @@ User.init(
     },
 
     fav_trail: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: true,
+      references: {
+        model: "Trail",
+        key: "id",
+      },
+
     },
   },
   {
@@ -53,7 +58,7 @@ User.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'User',
-  }
+  },
 );
 
 module.exports = User;
