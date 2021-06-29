@@ -17,14 +17,14 @@ TrailFeature.init(
     trail_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "Trail",
+        model: "trail",
         key: "id",
       },
     },
     feature_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "Feature",
+        model: "feature",
         key: "id",
       },
     },
@@ -34,7 +34,7 @@ TrailFeature.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Trail_Feature',
+    modelName: 'trail_feature',
   }
 );
 

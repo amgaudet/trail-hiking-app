@@ -1,7 +1,11 @@
 {{> navbar-hero }}
 
-{{#each trails as |trail|}}
-{{> trail-details}}
-{{/each}}
-
-<a href="/search">Locations</a>
+<div class="section">
+  <div class="container">
+    <div class="columns">
+      {{#each trails as |trail|}}
+      {{> trails-details}}
+      {{/each}}
+    </div>
+  </div>
+</div>

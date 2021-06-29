@@ -46,7 +46,7 @@ Trail.init(
     location_id: {
         type: DataTypes.INTEGER,
         references: {
-          model: "Location",
+          model: "location",
           key: "id",
         },
       },
@@ -68,7 +68,7 @@ Trail.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Trail',
+    modelName: 'trail',
   }
 );
 
