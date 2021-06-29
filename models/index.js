@@ -40,7 +40,6 @@ Trail.hasMany(Gallery, {
 
 
 
-
 module.exports = {
   Trail,
   Location,
