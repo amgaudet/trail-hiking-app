@@ -29,7 +29,7 @@ class Gallery extends Model {}
   trail_id: {
     type: DataTypes.INTEGER,
     references: {
-      model: "Trail",
+      model: "trail",
       key: "id",
     },
    },
@@ -38,7 +38,7 @@ class Gallery extends Model {}
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Gallery',
+    modelName: 'gallery',
   });
   
   module.exports = Gallery;
