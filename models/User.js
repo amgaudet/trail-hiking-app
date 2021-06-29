@@ -35,6 +35,16 @@ User.init(
         len: [8],
       },
     },
+
+    fav_trail: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: "Trail",
+        key: "id",
+      },
+
+    },
   },
   {
     hooks: {
@@ -48,7 +58,7 @@ User.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'User',
-  }
+  },
 );
 
 module.exports = User;

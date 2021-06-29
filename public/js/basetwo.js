@@ -11,3 +11,5 @@ imageUploadEl.addEventListener('change', async (event)=> {
     const item = await axios.post('/api/upload', formData, config);
     if (item) location.reload();
 });
+
+//we need to add axios to the html 

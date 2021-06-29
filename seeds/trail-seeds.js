@@ -9,6 +9,8 @@ const trailData = [
     elevation_gain: 216 ,
     type: "out & back",
     location_id: 1,
+    latitude: 36.279880860792794, 
+    longitude: -81.73005489621025,
     approved: true,
   },
   {
@@ -19,6 +21,8 @@ const trailData = [
     elevation_gain: 183,
     type: 'loop',
     location_id: 1,
+    latitude: 36.244452792022265, 
+    longitude: -81.65796733621801,
     approved: true,
   },
   {
@@ -29,6 +33,8 @@ const trailData = [
     elevation_gain: 905,
     type: 'loop',
     location_id:1 ,
+    latitude: 36.2621717704684, 
+    longitude: -81.63599468139098,
     approved: true,
   },
   {
@@ -39,6 +45,8 @@ const trailData = [
     elevation_gain: 3182,
     type: 'out & back',
     location_id: 2,
+    latitude:35.6831574213075, 
+    longitude:-82.48223073945073 ,
     approved: true,
   },
   {
@@ -49,6 +57,8 @@ const trailData = [
     elevation_gain: 272,
     type: 'loop',
     location_id: 2,
+    latitude: 35.701939745670764, 
+    longitude:-82.57727516038817,
     approved: true,
   },
   {
@@ -59,6 +69,8 @@ const trailData = [
     elevation_gain: 928,
     type: 'out & back',
     location_id: 2,
+    latitude: 35.49120623888165, 
+    longitude: -82.63976353680115,
     approved: true,
   },
   {
@@ -69,6 +81,8 @@ const trailData = [
     elevation_gain: 895,
     type: 'loop',
     location_id: 3,
+    latitude: 35.49091519426982, 
+    longitude: -83.45907335621027,
     approved: true,
   },
   {
@@ -79,6 +93,8 @@ const trailData = [
     elevation_gain: 2273,
     type: 'out & back',
     location_id: 3,
+    latitude: 35.473022899782016, 
+    longitude: -83.40414171914271,
     approved: true,
   },
   {
@@ -89,6 +105,8 @@ const trailData = [
     elevation_gain: 780,
     type: 'loop',
     location_id: 3,
+    latitude: 35.47457859866508,
+    longitude:  -83.54300923489205,
     approved: true,
   },
   {
@@ -99,6 +117,8 @@ const trailData = [
     elevation_gain: 1722,
     type: 'out & back',
     location_id: 4,
+    latitude: 35.308357316318386, 
+    longitude: -82.77085376704126,
     approved: true,
   },
   {
@@ -109,6 +129,8 @@ const trailData = [
     elevation_gain: 337,
     type: 'loop',
     location_id: 4,
+    latitude: 35.36558553326861, 
+    longitude: -82.76803400156437,
     approved: true,
   },
   {
@@ -119,6 +141,8 @@ const trailData = [
     elevation_gain: 1099,
     type: 'loop',
     location_id: 4,
+    latitude: 35.308357316318386, 
+    longitude: -82.73868451221422,
     approved: true,
   },
   {
@@ -129,6 +153,8 @@ const trailData = [
     elevation_gain: 439,
     type: 'loop',
     location_id: 5,
+    latitude: 35.212309557358004, 
+    longitude: -82.63718209040115,
     approved: true,
   },
   {
@@ -139,6 +165,8 @@ const trailData = [
     elevation_gain: 693,
     type: 'out & back',
     location_id: 5,
+    latitude: 35.21327503051462,
+    longitude:  -82.57009504563453,
     approved: true,
   },
   {
@@ -149,6 +177,8 @@ const trailData = [
     elevation_gain: 170,
     type:'out & back' ,
     location_id: 5,
+    latitude: 35.33884108155775,
+    longitude:  -82.43095110373994,
     approved: true,
   },
   {
@@ -159,6 +189,8 @@ const trailData = [
     elevation_gain: 2477,
     type: 'loop',
     location_id: 6,
+    latitude: 35.40554512225136, 
+    longitude: -83.2201399042932,
     approved: true,
   },
   {
@@ -169,6 +201,8 @@ const trailData = [
     elevation_gain: 1433,
     type:'out & back' ,
     location_id: 6,
+    latitude: 35.46407525909606, 
+    longitude: -83.15957729983461,
     approved: true,
   },
   {
@@ -179,6 +213,8 @@ const trailData = [
     elevation_gain: 492,
     type: 'out & back',
     location_id: 6,
+    latitude: 35.49091519426982, 
+    longitude: -83.1376046450076,
     approved: true,
   },
   {
@@ -189,6 +225,8 @@ const trailData = [
     elevation_gain: 961,
     type: 'out & back',
     location_id: 7,
+    latitude: 36.34214939104116, 
+    longitude: -81.69220741214083,
     approved: true,
   },
   {
@@ -199,6 +237,8 @@ const trailData = [
     elevation_gain: 551,
     type: 'out & back',
     location_id: 7,
+    latitude: 36.129175648861406, 
+    longitude: -81.77877810103725,
     approved: true,
   },
   {
@@ -209,6 +249,8 @@ const trailData = [
     elevation_gain: 446,
     type: 'out & back',
     location_id: 7,
+    latitude: 36.235591796015775, 
+    longitude: -81.8369753006991,
     approved: true,
   },
 
