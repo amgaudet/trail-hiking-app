@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Location, Trail } = require('../../models');
+const { Location, Trail, Feature } = require('../../models');
 
 //GET all locations
 router.get('/', async (req, res) => {
@@ -21,7 +21,8 @@ router.get('/:id', async (req, res) => {
     });
 
     const location = locationData.get({ plain: true });
-    res.render('search', location);
+    // res.render('search', location);
+    res.status(200).json(locationData);
   } catch (err) {
     res.status(500).json(err)
   };
