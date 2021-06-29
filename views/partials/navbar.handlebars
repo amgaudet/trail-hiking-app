@@ -1,0 +1,54 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="#">
+            <img src="http://via.placeholder.com/400x100/" width="112" height="28">
+        </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true">Home</span>
+            <span aria-hidden="true">Profile</span>
+            <span aria-hidden="true">Trails</span>
+        </a>
+    </div>
+
+    <div class="navbar-menu">
+        <div class="navbar-start">
+            <a href="/" class="navbar-item">
+                Home
+            </a>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                    Trails
+                </a>
+
+                <div class="navbar-dropdown">
+                    {{#each locations as |location|}}
+                    {{> location-names}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+        {{#if isloggedIn}}
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <h3>Welcome back, {{ userName }}!</h3>
+            </div>
+        </div>
+        {{else}}
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                    <a href="/login" class="button is-primary">
+                        <strong>Sign up</strong>
+                    </a>
+                    <a href="/login" class="button is-light">
+                        Log in
+                    </a>
+                </div>
+            </div>
+        </div>
+        {{/if}}
+    </div>
+</nav>
+
