@@ -21,19 +21,14 @@
                 </div>
             </div>
 
-            <div class="column is-6">
-                <div class="card">
-                    <div class="card-content">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam doloremque iste, veniam neque
-                            eos corporis ipsa in aut, illum recusandae voluptatum. Aspernatur, aliquam? Possimus
-                            quibusdam explicabo excepturi, veritatis rerum doloremque voluptatem! Deleniti aperiam
-                            laboriosam officiis minima beatae exercitationem fuga corrupti nesciunt cumque saepe.
-                            Libero, eligendi temporibus alias beatae magnam ad.</p>
-                    </div>
-                </div>
+
+            <div class="card-content">
+                {{#each locations.trails as |trail|}}
+                {{> search-details}}
+                {{/each}}
             </div>
         </div>
     </div>
 </div>
 
-{{> user-comment}}
+{{!-- {{> user-comment}} --}}
