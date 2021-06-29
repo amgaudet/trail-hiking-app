@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Trail } = require('../../models');
 
 //Create new login - auto creates session
 router.post('/', async (req, res) => {
@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
 
 //Login - creates new session
 router.post('/login', async (req, res) => {
-  const userData = User.findOne({
+  const userData = await User.findOne({
     where: {
       email: req.body.email
     },
@@ -46,6 +46,21 @@ router.post('/login', async (req, res) => {
 
     res.status(200).json(userData);
   });
+});
+
+//gets users favorite trails for profile page
+router.get('/:id', async (req, res) => {
+  try {
+    const userFavorites = await User.findOne({
+      where: {
+        id: req.params.id
+      },
+      include: [Trail]
+    });
+    res.render('profile', userFavorites);
+  } catch (err) {
+    res.status(404).json('user not found');
+  }
 });
 
 //Log out - terminates session
