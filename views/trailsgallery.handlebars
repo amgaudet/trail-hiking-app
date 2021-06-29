@@ -1,0 +1,88 @@
+{{!-- {{> trails-details}} --}}
+
+
+<div class="section">
+    <div class="card">
+        <div class="card-content">
+            <form id="new-trail-form" class="form">
+                <div class="field is-horizontal">
+                    <div class="field-body">
+                        <div class="field">
+                            <label class="label">Trail Name</label>
+                            <div class="control is-expanded">
+                                <input type="text" id="trail-input" class="input"  placeholder="Trail Name">
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">Search Location</label>
+                            <div class="control">
+                                <div id="location-input" class="select">
+                                    <select>
+                                        <option>Select Location</option>
+                                        <option>Locations</option>
+                                        <option>Locations</option>
+                                        <option>Locations</option>
+                                        <option>Locations</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">Select Difficulty Level</label>
+                            <div class="control">
+                                <div id="difficulty-input" class="select">
+                                    <select>
+                                        <option>Select Difficulty Level</option>
+                                        <option>Challenging</option>
+                                        <option>Doable</option>
+                                        <option>Easy</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">Distance</label>
+                            <div class="control">
+                                <input type="text" id="distance-input" class="input" placeholder="miles">
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div id="feature-input" class="control">
+                                <label class="is-size-5">Choose Features</label>
+                                <br>
+                                <input id="restrooms" class="checkbox" type="checkbox">
+                                <label for="restrooms">
+                                    Restrooms
+                                </label>
+                                <br>
+
+                                <input id="pet-friendly" class="checkbox" type="checkbox">
+                                <label for="pet-friendly">
+                                    Pet Friendly
+                                </label>
+                                <br>
+
+                                <input id="stroller-accessible" class="checkbox" type="checkbox">
+                                <label for="stroller-accessible">
+                                    Stroller Accessible
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="field is-grouped">
+                            <div class="control">
+                                <input type="submit" value="Submit" class="button is-link"></input>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="../public/js/newTrail.js"></script>
