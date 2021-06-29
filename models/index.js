@@ -34,7 +34,7 @@ Feature.belongsToMany(Trail, {
 });
 
 Trail.hasMany(Gallery, {
-  foreignKey: 'gallery_id',
+  foreignKey: 'trail_id',
   onDelete: 'CASCADE',
 });
 
