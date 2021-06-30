@@ -1,16 +1,22 @@
-<div class="column is-4">
-    <div class="card">
-        <div class="card-image">
-            <figure class="image">
-                <img src="{{ galleries.[0].url }}" alt="Trail Image">
-            </figure>
-        </div>
-        <div class="card-content">
-            <div class="content">
-                {{ trail_name }}
-                {{ distance }}
-                {{ difficulty }}
-            </div>
-        </div>
+
+<div class="column is-3 is-on-left">
+  <a href="/trail/{{id}}">
+    <div class="card grow">
+      <header class="card-header">
+        <p class="card-header-title is-centered">
+          {{ trail_name }}
+        </p>
+      </header>
+      <div class="card-image">
+        <figure class="image">
+          <img src="{{ galleries.[0].url }}" alt="Trail Image" />
+        </figure>
+      </div>
+      <div class="card-content">
+        <p class="card-footer-item">Distance: {{ distance }} miles</p>
+        <p class="card-footer-item">Difficulty Level: {{ difficulty }} </p>
+      </div>
     </div>
+
+  </a>
 </div>
