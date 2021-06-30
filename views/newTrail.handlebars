@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-header">
+    {{trail_name}}
+  </div>
+  <div class="card-body">
+    <p>
+      NC City:
+      {{nc_city}}
+    </p>
+    <p>
+      Distance:
+      {{distance}}
+    </p>
+    <p>
+      Difficulty Level:
+      {{difficulty_level}}
+    </p>
+
+    {{#if stroller_accessible}}
+    <p class="stroller_accessible">
+      Strollable Accessible
+    </p>
+    {{/if}}
+
+    {{#if restrooms}}
+    <p class="restrooms">
+      Restrooms
+    </p>
+    {{/if}}
+
+    {{#if pet_friendly}}
+    <p class="pet_friendly">
+      Pet Friendly
+    </p>
+    {{/if}}
+  </div>
+</div>
