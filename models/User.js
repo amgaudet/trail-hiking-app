@@ -35,13 +35,13 @@ User.init(
         len: [8],
       },
     },
-    fav_trail: {
-      type: DataTypes.STRING,
-      references: {
-        model: "trail",
-        key: "id",
-      }
-    }
+    // fav_trail: {
+    //   type: DataTypes.STRING,
+    //   references: {
+    //     model: "trail",
+    //     key: "id",
+    //   }
+    // }
 
   },
   {
