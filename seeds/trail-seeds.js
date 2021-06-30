@@ -4,7 +4,7 @@ const trailData = [
   {
     trail_name: 'Hebron Falls',
     distance: 3.5,
-    difficulty: "easy",
+    difficulty: "Easy",
     dog_friendly: true ,
     elevation_gain: 216 ,
     type: "out & back",
@@ -16,7 +16,7 @@ const trailData = [
   {
     trail_name: 'Greenway Trail Loop',
     distance: 3.1 ,
-    difficulty: 'easy',
+    difficulty: 'Easy',
     dog_friendly: true,
     elevation_gain: 183,
     type: 'loop',
@@ -28,7 +28,7 @@ const trailData = [
   {
     trail_name: 'Rocky Knob Trail',
     distance: 7.3,
-    difficulty:'moderate',
+    difficulty:'Moderate',
     dog_friendly: false,
     elevation_gain: 905,
     type: 'loop',
@@ -40,7 +40,7 @@ const trailData = [
   {
     trail_name: 'Craven Gap to Lane Pinnacle',
     distance:12.7 ,
-    difficulty:'hard',
+    difficulty:'Hard',
     dog_friendly: true,
     elevation_gain: 3182,
     type: 'out & back',
@@ -52,7 +52,7 @@ const trailData = [
   {
     trail_name: 'Richmond Hill Park Trail',
     distance: 2.8,
-    difficulty:'easy',
+    difficulty:'Easy',
     dog_friendly: true,
     elevation_gain: 272,
     type: 'loop',
@@ -64,7 +64,7 @@ const trailData = [
   {
     trail_name: 'Hard Times Road Trail',
     distance: 7.9,
-    difficulty:'moderate',
+    difficulty:'Moderate',
     dog_friendly: true,
     elevation_gain: 928,
     type: 'out & back',
@@ -76,7 +76,7 @@ const trailData = [
   {
     trail_name: 'Deep Creek Trail',
     distance: 4.9,
-    difficulty:'moderate',
+    difficulty:'Moderate',
     dog_friendly: false,
     elevation_gain: 895,
     type: 'loop',
@@ -88,7 +88,7 @@ const trailData = [
   {
     trail_name: 'Lonesome Pine Overlook',
     distance: 6.6,
-    difficulty:'hard',
+    difficulty:'Hard',
     dog_friendly: false,
     elevation_gain: 2273,
     type: 'out & back',
@@ -100,7 +100,7 @@ const trailData = [
   {
     trail_name: 'Goldmine Loop Trail',
     distance: 3,
-    difficulty:'moderate',
+    difficulty:'Moderate',
     dog_friendly: false,
     elevation_gain: 780,
     type: 'loop',
@@ -112,7 +112,7 @@ const trailData = [
   {
     trail_name: 'Looking Glass Rock Trail',
     distance: 5.8,
-    difficulty:'moderate',
+    difficulty:'Moderate',
     dog_friendly: true,
     elevation_gain: 1722,
     type: 'out & back',
@@ -124,7 +124,7 @@ const trailData = [
   {
     trail_name: 'Pink Beds Trail',
     distance: 6,
-    difficulty:'easy',
+    difficulty:'Easy',
     dog_friendly: true,
     elevation_gain: 337,
     type: 'loop',
@@ -136,7 +136,7 @@ const trailData = [
   {
     trail_name: 'Twin Falls Trail',
     distance: 7.2,
-    difficulty:'moderate',
+    difficulty:'Moderate',
     dog_friendly: true,
     elevation_gain: 1099,
     type: 'loop',
@@ -148,7 +148,7 @@ const trailData = [
   {
     trail_name: 'Triple Falls Trail',
     distance: 2.9,
-    difficulty:'easy',
+    difficulty:'Easy',
     dog_friendly: true,
     elevation_gain: 439,
     type: 'loop',
@@ -160,7 +160,7 @@ const trailData = [
   {
     trail_name: 'Stone Mountain Summit Trail',
     distance: 3.2,
-    difficulty:'moderate',
+    difficulty:'Moderate',
     dog_friendly: true,
     elevation_gain: 693,
     type: 'out & back',
@@ -172,7 +172,7 @@ const trailData = [
   {
     trail_name: 'Oklawaha Greenway',
     distance: 6.9,
-    difficulty:'easy',
+    difficulty:'Easy',
     dog_friendly: true,
     elevation_gain: 170,
     type:'out & back' ,
@@ -184,7 +184,7 @@ const trailData = [
   {
     trail_name: 'The Pinnacle Trail',
     distance: 7.4,
-    difficulty: 'hard',
+    difficulty: 'Hard',
     dog_friendly: true,
     elevation_gain: 2477,
     type: 'loop',
@@ -196,7 +196,7 @@ const trailData = [
   {
     trail_name: 'Blackrock Mountain Trail',
     distance: 4.8,
-    difficulty:'hard',
+    difficulty:'Hard',
     dog_friendly: true,
     elevation_gain: 1433,
     type:'out & back' ,
@@ -208,7 +208,7 @@ const trailData = [
   {
     trail_name: 'Yellow Face Trail',
     distance: 1.6,
-    difficulty:'moderate',
+    difficulty:'Moderate',
     dog_friendly: true,
     elevation_gain: 492,
     type: 'out & back',
@@ -220,7 +220,7 @@ const trailData = [
   {
     trail_name: 'Elk Knob Summit',
     distance: 3.8,
-    difficulty:'moderate',
+    difficulty:'Moderate',
     dog_friendly: true,
     elevation_gain: 961,
     type: 'out & back',
@@ -232,7 +232,7 @@ const trailData = [
   {
     trail_name: 'Nuwati Trail',
     distance: 3 ,
-    difficulty:'moderate',
+    difficulty:'Moderate',
     dog_friendly: true,
     elevation_gain: 551,
     type: 'out & back',
@@ -244,7 +244,7 @@ const trailData = [
   {
     trail_name: 'Lower Pond Creek Trail',
     distance: 1.4,
-    difficulty:'hard',
+    difficulty:'Hard',
     dog_friendly:false,
     elevation_gain: 446,
     type: 'out & back',
