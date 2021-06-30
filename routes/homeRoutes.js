@@ -35,6 +35,9 @@ router.get('/', async (req, res) => {
 
 router.get('/search/:id', async (req, res) => {
   try {
+    const getLocationData = await Location.findAll();
+    const locations = getLocationData.map((location) => location.get({ plain: true }));
+
     const locationData = await Location.findByPk(req.params.id, {
       include: [{
         model: Trail,
@@ -42,9 +45,9 @@ router.get('/search/:id', async (req, res) => {
       }],
     });
 
-    const locations = JSON.parse(JSON.stringify(locationData));
+    const location = JSON.parse(JSON.stringify(locationData));
 
-    res.render('search', { locations, logged_in: req.session.logged_in });
+    res.render('search', { location, locations, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err)
   };

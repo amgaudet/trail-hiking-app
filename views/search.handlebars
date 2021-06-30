@@ -1,5 +1,5 @@
 <section class="section">
-  <p class="title is-3 has-text-white"> Explore the hiking trails of {{ locations.location_name }}, North Carolina!</p>
+  <p class="title is-3 has-text-white"> Explore the hiking trails of {{ location.location_name }}, North Carolina!</p>
   <p class="subtitle is-4 has-text-white">Click a trail card to view more.</p>
 </section>
 
@@ -7,7 +7,7 @@
 <div id="area-cards" class="section">
   <div class="container">
     <div class="columns is-multiline is-vcentered is-centered has-text-centered">
-      {{#each locations.trails as |trail|}}
+      {{#each location.trails as |trail|}}
       {{> search-details}}
       {{/each}}
     </div>
