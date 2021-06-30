@@ -1,6 +1,10 @@
 const router = require('express').Router();
 const { User, Trail } = require('../../models');
 
+
+// router.get('/', (req, res) => {
+//   res.status(200).json('hello world');
+// })
 //Create new login - auto creates session
 router.post('/', async (req, res) => {
   try {
@@ -21,8 +25,17 @@ router.post('/', async (req, res) => {
   }
 });
 
+// router.put('/', async (req, res) => {
+//   const userData = await User.findOne({
+//     where: {
+//       email: ''
+//     }
+//   })
+// });
+
 //Login - creates new session
 router.post('/login', async (req, res) => {
+  console.log(req.body.email);
   const userData = await User.findOne({
     where: {
       email: req.body.email
