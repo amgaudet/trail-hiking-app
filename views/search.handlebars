@@ -3,13 +3,14 @@
   <p class="subtitle is-4 has-text-white">Click a trail card to view more.</p>
 </section>
 
-
-<div id="area-cards" class="section">
-  <div class="container">
-    <div class="columns is-multiline is-vcentered is-centered has-text-centered">
-      {{#each location.trails as |trail|}}
-      {{> search-details}}
-      {{/each}}
+<div class="section">
+  <div id="area-cards" class="section">
+    <div class="container">
+      <div class="columns is-multiline is-vcentered is-centered has-text-centered">
+        {{#each location.trails as |trail|}}
+        {{> search-details}}
+        {{/each}}
+      </div>
     </div>
   </div>
 </div>
@@ -65,7 +66,7 @@
                 </label>
               </strong>
               <div class="control">
-                <input type="text" id="distance" class="input" placeholder="Hard, Moderate, Easy">
+                <input type="text" id="difficulty_level" class="input" placeholder="Hard, Moderate, Easy">
                 {{difficulty_level}}
               </div>
             </div>
@@ -106,4 +107,4 @@
   {{/if}} --}}
 </div>
 
-<script src="/public/js/add-trail.js"></script>
+<script src="/js/add-trail.js"></script>

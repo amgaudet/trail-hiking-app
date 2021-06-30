@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Trail, Location, Feature, Gallery } = require('../../models');
+const { Trail, Location, Feature, Gallery, NewTrail } = require('../../models');
 
 //GET all trails
 router.get('/', async (req, res) => {
@@ -46,6 +46,22 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     await Trail.create({
+      trail_name: req.body.trail_name,
+      nc_city: req.body.nc_city,
+      distance: req.body.distance,
+      difficulty_level: req.body.difficulty_level,
+      stroller_accessible: req.body.stroller_accessible,
+      restrooms: req.body.restrooms,
+      pet_friendly: req.body.pet_friendly,
+    });
+  } catch (err) {
+    res.status(400).json(err);
+  };
+});
+
+router.post('/new', async (req, res) => {
+  try {
+    await NewTrail.create({
       trail_name: req.body.trail_name,
       nc_city: req.body.nc_city,
       distance: req.body.distance,

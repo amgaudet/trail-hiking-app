@@ -9,7 +9,7 @@ async function newFormHandler(event) {
   const restrooms = document.querySelector('#restrooms:checked') ? true : false;
   const pet_friendly = document.querySelector('#pet_friendly:checked') ? true : false;
 
-  const response = await fetch(`/api/newtrail`, {
+  const response = await fetch(`/api/trails/new`, {
     method: 'POST',
     body: JSON.stringify({
       trail_name,
@@ -33,5 +33,5 @@ async function newFormHandler(event) {
 }
 
 document
-  .querySelector('.new-trail-form')
+  .querySelector('#new-trail-form')
   .addEventListener('submit', newFormHandler);

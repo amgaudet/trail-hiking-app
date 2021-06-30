@@ -1,5 +1,12 @@
 const router = require('express').Router();
-const { Location, Trail, Feature, Gallery, User, Upload } = require('../models');
+const { Location, Trail, Feature, Gallery, User, NewTrail, Upload } = require('../models');
+
+//GET all new Trails
+router.get('/new-trails', async (req, res) => {
+  const newTrailData = await NewTrail.findAll();
+  const newtrails = newTrailData.map((newtrail) => newtrail.get({ plain: true }));
+  res.render('new-trails', { newtrails });
+});
 
 router.get('/', async (req, res) => {
   try {
