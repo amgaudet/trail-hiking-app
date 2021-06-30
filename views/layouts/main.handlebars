@@ -13,7 +13,7 @@
 
 <body>
     {{> navbar }}
-    
+
     <main>
         <div>
             {{{ body }}}
@@ -23,5 +23,8 @@
     {{> footer }}
 
 </body>
+{{#if logged_in}}
+<script src="./js/logout.js"></script>
+{{/if}}
 
 </html>

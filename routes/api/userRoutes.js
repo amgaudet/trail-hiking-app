@@ -1,10 +1,6 @@
 const router = require('express').Router();
 const { User, Trail } = require('../../models');
 
-
-// router.get('/', (req, res) => {
-//   res.status(200).json('hello world');
-// })
 //Create new login - auto creates session
 router.post('/', async (req, res) => {
   try {
@@ -16,13 +12,25 @@ router.post('/', async (req, res) => {
 
     //Begins new session with created log in
     req.session.save(() => {
-      req.session.loggedIn = true;
+      req.session.logged_in = true;
 
       res.status(200).json(userData);
     });
   } catch (err) {
     res.status(500).json(err);
   }
+});
+
+//Log out - terminates session
+router.post('/logout', (req, res) => {
+  console.log('trying to log out')
+  if (req.session.logged_in) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  };
 });
 
 // router.put('/', async (req, res) => {
@@ -35,7 +43,6 @@ router.post('/', async (req, res) => {
 
 //Login - creates new session
 router.post('/login', async (req, res) => {
-  console.log(req.body.email);
   const userData = await User.findOne({
     where: {
       email: req.body.email
@@ -47,7 +54,7 @@ router.post('/login', async (req, res) => {
       .json({ message: "Incorrect email or password. Please try again" });
   };
 
-  //Checks password matches with email     INCLUDE DEFINITION IN USERS MODEL
+  //Checks password matches with email
   const validate = await (await userData).checkPassword(req.body.password);
   if (!validate) {
     res.status(400)
@@ -55,7 +62,8 @@ router.post('/login', async (req, res) => {
   };
 
   req.session.save(() => {
-    req.session.loggedIn = true;
+    req.session.user_id = userData.id
+    req.session.logged_in = true;
 
     res.status(200).json(userData);
   });
@@ -74,17 +82,6 @@ router.get('/:id', async (req, res) => {
   } catch (err) {
     res.status(404).json('user not found');
   }
-});
-
-//Log out - terminates session
-router.post('/logout', (req, res) => {
-  if (req.session.loggedIn) {
-    req.session.destroy(() => {
-      res.status(204).end();
-    });
-  } else {
-    res.status(404).end();
-  };
 });
 
 module.exports = router;
