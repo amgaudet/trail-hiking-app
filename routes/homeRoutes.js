@@ -47,7 +47,18 @@ router.get('/search/:id', async (req, res) => {
 
     const location = JSON.parse(JSON.stringify(locationData));
 
-    res.render('search', { location, locations, logged_in: req.session.logged_in });
+    const userData = await User.findAll({
+      attributes: { exclude: ['password'] }
+    });
+    let users = userData.map((user) => user.get({ plain: true }));
+
+    if (req.session.user_id) {
+      const loggedUser = await User.findByPk(req.session.user_id);
+      let users = loggedUser.get({ plain: true });
+      delete users.password;
+    }
+
+    res.render('search', { location, locations, users, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err)
   };
@@ -56,7 +67,18 @@ router.get('/search/:id', async (req, res) => {
 router.get('/trailsgallery', async (req, res) => {
   const getLocationData = await Location.findAll();
   const locations = getLocationData.map((location) => location.get({ plain: true }));
-  res.render('trailsgallery', { locations, logged_in: req.session.logged_in })
+
+  const userData = await User.findAll({
+    attributes: { exclude: ['password'] }
+  });
+  let users = userData.map((user) => user.get({ plain: true }));
+
+  if (req.session.user_id) {
+    const loggedUser = await User.findByPk(req.session.user_id);
+    let users = loggedUser.get({ plain: true });
+    delete users.password;
+  }
+  res.render('trailsgallery', { locations, users, logged_in: req.session.logged_in })
 });
 
 router.get('/trail/:id', async (req, res) => {
@@ -68,19 +90,51 @@ router.get('/trail/:id', async (req, res) => {
   });
   const trail = trailData.get({ plain: true });
 
-  res.render('trail', { locations, trail, logged_in: req.session.logged_in })
+  const userData = await User.findAll({
+    attributes: { exclude: ['password'] }
+  });
+  let users = userData.map((user) => user.get({ plain: true }));
+
+  if (req.session.user_id) {
+    const loggedUser = await User.findByPk(req.session.user_id);
+    let users = loggedUser.get({ plain: true });
+    delete users.password;
+  }
+
+  res.render('trail', { locations, trail, users, logged_in: req.session.logged_in })
 });
 
 router.get('/login', async (req, res) => {
   const getLocationData = await Location.findAll();
   const locations = getLocationData.map((location) => location.get({ plain: true }));
+  const userData = await User.findAll({
+    attributes: { exclude: ['password'] }
+  });
+  let users = userData.map((user) => user.get({ plain: true }));
+
+  if (req.session.user_id) {
+    const loggedUser = await User.findByPk(req.session.user_id);
+    let users = loggedUser.get({ plain: true });
+    delete users.password;
+  }
   res.render('login', { locations })
 });
 
 router.get('/profile', async (req, res) => {
   const getLocationData = await Location.findAll();
   const locations = getLocationData.map((location) => location.get({ plain: true }));
-  res.render('profile', { locations, logged_in: req.session.logged_in })
+
+  const userData = await User.findAll({
+    attributes: { exclude: ['password'] }
+  });
+  let users = userData.map((user) => user.get({ plain: true }));
+
+  if (req.session.user_id) {
+    const loggedUser = await User.findByPk(req.session.user_id);
+    let users = loggedUser.get({ plain: true });
+    delete users.password;
+  }
+  res.render('profile', { locations, users, logged_in: req.session.logged_in })
 });
 
 module.exports = router;
