@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Location, Trail, Feature, Gallery } = require('../models');
+const { Location, Trail, Feature, Gallery, User } = require('../models');
 
 router.get('/', async (req, res) => {
   try {
@@ -14,8 +14,18 @@ router.get('/', async (req, res) => {
     const trails = trailData.map((trail) => {
       return trail.get({ plain: true });
     })
+    const userData = await User.findAll({
+      attributes: { exclude: ['password'] }
+    });
+    let users = userData.map((user) => user.get({ plain: true }));
 
-    res.render('homepage', { trails, locations });
+    if (req.session.user_id) {
+      const loggedUser = await User.findByPk(req.session.user_id);
+      let users = loggedUser.get({ plain: true });
+      delete users.password;
+    }
+
+    res.render('homepage', { trails, locations, users, logged_in: req.session.logged_in });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -34,7 +44,7 @@ router.get('/search/:id', async (req, res) => {
     console.log(locationData);
     const locations = JSON.parse(JSON.stringify(locationData));
 
-    res.render('search', { locations });
+    res.render('search', { locations, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err)
   };
@@ -43,7 +53,7 @@ router.get('/search/:id', async (req, res) => {
 router.get('/trailsgallery', async (req, res) => {
   const getLocationData = await Location.findAll();
   const locations = getLocationData.map((location) => location.get({ plain: true }));
-  res.render('trailsgallery', { locations })
+  res.render('trailsgallery', { locations, logged_in: req.session.logged_in })
 });
 
 router.get('/trail/:id', async (req, res) => {
@@ -55,7 +65,7 @@ router.get('/trail/:id', async (req, res) => {
   });
   const trail = trailData.get({ plain: true });
 
-  res.render('trail', { locations, trail })
+  res.render('trail', { locations, trail, logged_in: req.session.logged_in })
 });
 
 router.get('/login', async (req, res) => {
@@ -67,7 +77,7 @@ router.get('/login', async (req, res) => {
 router.get('/profile', async (req, res) => {
   const getLocationData = await Location.findAll();
   const locations = getLocationData.map((location) => location.get({ plain: true }));
-  res.render('profile', { locations })
+  res.render('profile', { locations, logged_in: req.session.logged_in })
 });
 
 

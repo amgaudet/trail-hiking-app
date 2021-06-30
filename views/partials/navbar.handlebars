@@ -29,10 +29,13 @@
             </div>
         </div>
 
-        {{#if isloggedIn}}
+        {{#if logged_in}}
         <div class="navbar-end">
             <div class="navbar-item">
-                <h3>Welcome back, {{ userName }}!</h3>
+                <h3>Welcome back, {{ users.[0].name }}! </h3>
+                <p id="logoutBtn" class="button is-danger">
+                    <strong>Log out</strong>
+                </p>
             </div>
         </div>
         {{else}}
@@ -51,4 +54,3 @@
         {{/if}}
     </div>
 </nav>
-
