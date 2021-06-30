@@ -24,7 +24,7 @@ Feature.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Feature',
+    modelName: 'feature',
   }
 );
 

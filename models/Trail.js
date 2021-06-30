@@ -46,7 +46,7 @@ Trail.init(
     location_id: {
         type: DataTypes.INTEGER,
         references: {
-          model: "Location",
+          model: "location",
           key: "id",
         },
       },

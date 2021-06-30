@@ -2,10 +2,10 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection');
 
-class TrailFeature extends Model {}
+class UserTrails extends Model {}
 
-// sets up fields and rules for TrailFeature model
-TrailFeature.init(
+
+UserTrails.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -21,10 +21,10 @@ TrailFeature.init(
         key: "id",
       },
     },
-    feature_id: {
+    user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "feature",
+        model: "user",
         key: "id",
       },
     },
@@ -34,8 +34,8 @@ TrailFeature.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'trail_feature',
+    modelName: 'user_trails',
   }
 );
 
-module.exports = TrailFeature;
+module.exports = UserTrails;
