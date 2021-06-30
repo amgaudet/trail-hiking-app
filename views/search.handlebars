@@ -21,75 +21,81 @@
       <form id="new-trail-form" class="form">
         <div class="field is-horizontal">
           <div class="field-body">
+
             <div class="field">
-              <label class="label">Trail Name</label>
-              <div class="control is-expanded">
-                <input type="text" id="trail-input" class="input" placeholder="Trail Name">
+              <strong>
+                <label for="trail_name">
+                  Trail Name:
+                </label>
+              </strong>
+              <div class="control">
+                <input type="text" id="trail_name" class="input" placeholder="Trail Name">
+                {{trail_name}}
               </div>
             </div>
 
             <div class="field">
-              <label class="label">Search Location</label>
+              <strong>
+                <label for="nc_city">
+                  NC City:
+                </label>
+              </strong>
               <div class="control">
-                <div id="location-input" class="select">
-                  <select>
-                    <option>Select Location</option>
-                    <option>Locations</option>
-                    <option>Locations</option>
-                    <option>Locations</option>
-                    <option>Locations</option>
-                  </select>
-                </div>
+                <input type="text" id="nc_city" class="input" placeholder="City">
+                {{nc_city}}
               </div>
             </div>
 
             <div class="field">
-              <label class="label">Select Difficulty Level</label>
+              <strong>
+                <label for="distance">
+                  Distance:
+                </label>
+              </strong>
               <div class="control">
-                <div id="difficulty-input" class="select">
-                  <select>
-                    <option>Select Difficulty Level</option>
-                    <option>Challenging</option>
-                    <option>Doable</option>
-                    <option>Easy</option>
-                  </select>
-                </div>
+                <input type="text" id="distance" class="input" placeholder="miles">
+                {{distance}}
               </div>
             </div>
 
             <div class="field">
-              <label class="label">Distance</label>
+              <strong>
+                <label for="difficulty_level">
+                  Difficulty Level:
+                </label>
+              </strong>
               <div class="control">
-                <input type="text" id="distance-input" class="input" placeholder="miles">
+                <input type="text" id="distance" class="input" placeholder="Hard, Moderate, Easy">
+                {{difficulty_level}}
               </div>
             </div>
 
             <div class="field">
               <div id="feature-input" class="control">
-                <label class="is-size-5">Choose Features</label>
-                <br>
-                <input id="restrooms" class="checkbox" type="checkbox">
+                <strong><label>Choose Features</label></strong>
+                <br />
+                <input type="checkbox" id="stroller_accessible" name="stroller_accessible" value="true" />
+                <label for="stroller_accessible">
+                  Stroller Accessible
+                </label>
+                <br />
+
+                <input type="checkbox" id="restrooms" name="restrooms" value="true" />
                 <label for="restrooms">
                   Restrooms
                 </label>
-                <br>
+                <br />
 
-                <input id="pet-friendly" class="checkbox" type="checkbox">
-                <label for="pet-friendly">
+                <input type="checkbox" id="pet_friendly" name="pet_friendly" value="true" />
+                <label for="pet_friendly">
                   Pet Friendly
                 </label>
-                <br>
-
-                <input id="stroller-accessible" class="checkbox" type="checkbox">
-                <label for="stroller-accessible">
-                  Stroller Accessible
-                </label>
+                <br />
               </div>
             </div>
-
             <div class="field is-grouped">
               <div class="control">
-                <input type="submit" value="Submit" class="button is-link"></input>
+                <button type="submit" value="Submit" class="button is-link">Submit</input>
               </div>
             </div>
           </div>
@@ -99,3 +105,5 @@
   </div>
   {{/if}}
 </div>
+
+<script src="/public/js/add-trail.js"></script>
