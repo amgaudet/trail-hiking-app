@@ -41,7 +41,7 @@ router.get('/search/:id', async (req, res) => {
         include: [Gallery]
       }],
     });
-    console.log(locationData);
+
     const locations = JSON.parse(JSON.stringify(locationData));
 
     res.render('search', { locations, logged_in: req.session.logged_in });
@@ -79,24 +79,5 @@ router.get('/profile', async (req, res) => {
   const locations = getLocationData.map((location) => location.get({ plain: true }));
   res.render('profile', { locations, logged_in: req.session.logged_in })
 });
-
-
-
-
-
-// router.get('/', async (req, res) => {
-//   try {
-//     const getTrailUrl = await Trail.findAll();
-//     const trails = getTrailUrl.map((trail) =>
-//       trail.get({ plain: true })
-//     );
-//     res.render('homepage', { trails })
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
-
-
 
 module.exports = router;
