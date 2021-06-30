@@ -2,31 +2,31 @@ const { Feature } = require('../models');
 
 const featureData = [
   {
-    feature_name: 'waterfall',
+    feature_name: 'Waterfall',
   },
   {
-    feature_name: 'overlook',
+    feature_name: 'Overlook',
   },
   {
-    feature_name: 'bird watching',
+    feature_name: 'Bird watching',
   },
   {
-    feature_name: 'views',
+    feature_name: 'Views',
   },
   {
-    feature_name: 'river',
+    feature_name: 'River',
   },
   {
-    feature_name: 'biking',
+    feature_name: 'Biking',
   },
   {
-    feature_name: 'kid friendly',
+    feature_name: 'Kid friendly',
   },
   {
-    feature_name: 'restrooms',
+    feature_name: 'Restrooms',
   },
   {
-    feature_name: 'stroller-friendly',
+    feature_name: 'Stroller-friendly',
   },
 ];
 

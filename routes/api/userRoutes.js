@@ -33,13 +33,16 @@ router.post('/logout', (req, res) => {
   };
 });
 
-// router.put('/', async (req, res) => {
-//   const userData = await User.findOne({
-//     where: {
-//       email: ''
-//     }
-//   })
-// });
+router.put('/', async (req, res) => {
+  const userData = await User.update({
+   UserTrails: req.body.UserTrails
+  },
+  {where: {id: req.params.id}},
+
+  );
+  res.status(200).json(userData);
+}
+);
 
 //Login - creates new session
 router.post('/login', async (req, res) => {
