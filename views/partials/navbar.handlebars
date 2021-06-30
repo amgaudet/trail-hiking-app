@@ -1,26 +1,21 @@
-<nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
+<nav class="navbar is-transparent" role="navigation">
     <div class="navbar-brand">
         <a class="navbar-item" href="#">
-            <img src="http://via.placeholder.com/400x100/" width="112" height="28">
+            <img src="http://via.placeholder.com/400x100/" style="max-height: 50px">
         </a>
 
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-            <span aria-hidden="true">Home</span>
-            <span aria-hidden="true">Profile</span>
-            <span aria-hidden="true">Trails</span>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" id="burger">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
         </a>
     </div>
 
-    <div class="navbar-menu">
+    <div class="navbar-menu" id="nav-links">
         <div class="navbar-start">
-            <a href="/" class="navbar-item">
-                Home
-            </a>
+            <a href="/" class="navbar-item is-size-5">Home</a>
             <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link">
-                    Trails
-                </a>
-
+                <a class="navbar-link is-size-5">Trails</a>
                 <div class="navbar-dropdown">
                     {{#each locations as |location|}}
                     {{> location-names}}
@@ -33,10 +28,10 @@
         <div class="navbar-end">
             <div class="navbar-item">
                 <h3>Welcome back, {{ users.[0].name }}! </h3>
-                <p id="logoutBtn" class="button is-danger">
-                    <strong>Log out</strong>
-                </p>
             </div>
+            <button id="logoutBtn" class="button is-danger">
+                <strong>Log out</strong>
+            </button>
         </div>
         {{else}}
         <div class="navbar-end">

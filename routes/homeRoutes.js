@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
     const trailData = await Trail.findAll({
       order: ['distance'],
       include: [Location, Gallery],
-      limit: 4
+      limit: 8
     });
     const trails = trailData.map((trail) => {
       return trail.get({ plain: true });
