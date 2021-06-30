@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Location, Trail, Feature, Gallery, User } = require('../models');
+const { Location, Trail, Feature, Gallery, User, Upload } = require('../models');
 
 router.get('/', async (req, res) => {
   try {
@@ -93,6 +93,7 @@ router.get('/trail/:id', async (req, res) => {
   const userData = await User.findAll({
     attributes: { exclude: ['password'] }
   });
+
   let users = userData.map((user) => user.get({ plain: true }));
 
   if (req.session.user_id) {
@@ -101,7 +102,11 @@ router.get('/trail/:id', async (req, res) => {
     delete users.password;
   }
 
-  res.render('trail', { locations, trail, users, logged_in: req.session.logged_in })
+  const uploadedImagesData = await Upload.findAll({ where: { trail_id: req.params.id }});
+
+  const uploads = uploadedImagesData.map(o => o.get({ plain: true }));
+
+  res.render('trail', { locations, trail, users, uploads, logged_in: req.session.logged_in })
 });
 
 router.get('/login', async (req, res) => {

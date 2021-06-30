@@ -1,6 +1,6 @@
-const imageUploadEl = document.querySelector('#image');
+const imageUploadEl = document.querySelector('#image-upload');
 
-imageUploadEl.addEventListener('change', async (event)=> {
+imageUploadEl.addEventListener('change', async (event) => {
     const file= event.target.files[0];
     const formData = new FormData();
     const config = {
@@ -12,4 +12,3 @@ imageUploadEl.addEventListener('change', async (event)=> {
     if (item) location.reload();
 });
 
-//we need to add axios to the html 
