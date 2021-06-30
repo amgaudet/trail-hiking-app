@@ -56,10 +56,56 @@
             </div>
           </div>
         </div>
+        <div class="form-group">
+          <input accept="image/*" type="file" name="image" id="image-upload" class="button ">
+          <strong>Upload Image</strong>
+          </input>
+        </div>
       </div>
     </div>
   </div>
+</section>
+<div class="section">
+  <div class="container">
+    <div class="columns is-multiline is-vcentered">
+      {{#each uploads}}
+      <div class="column is-4">
+        <div class="card">
+          <img src="{{url}}" alt="image">
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
+{{#if photos}}
+<section>
+  {{#each photos}}
+  <div id={{id}}>
+    <picture>
+      <img src="{{url}}" alt="{{name}}" />
+    </picture>
+  </div>
+  {{/each}}
+
+  {{/if}}
+  </div>
 </div>
 
+  <script>
+    const imageUploadEl = document.querySelector('#image-upload');
 
-{{!-- {{> user-comment}} --}}
+    imageUploadEl.addEventListener('change', async (event) => {
+      const file = event.target.files[0];
+      const formData = new FormData();
+      const config = {
+        withCredentials: true
+      };
+
+      formData.append('file', file);
+      const item = await axios.post('/api/upload/{{trail.id}}', formData, config);
+      if (item) location.reload();
+    });
+
+  </script>
+  {{!-- {{> user-comment}} --}}

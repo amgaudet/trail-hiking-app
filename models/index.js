@@ -6,6 +6,7 @@ const User = require("./User");
 const TrailFeature = require("./TrailFeature");
 const Gallery = require('./Gallery');
 const UserTrails = require('./UserTrails');
+const Upload = require('./Upload');
 
 
 // Trail belongsTo Location
@@ -60,8 +61,8 @@ module.exports = {
   Feature,
   TrailFeature,
   Gallery,
-  UserTrails
-  
+  UserTrails,
+  Upload
 };
 
 
