@@ -1,10 +1,17 @@
 body {
     margin: auto;
     padding: 16px;
+    background-color: hsl(9, 34%, 69%);
 }
 
-footer {
+.navbar {
+    background-color: rgb(224, 199, 195);
     padding: 16px;
+    border-radius: 10px;
+}
+
+#dropdown:hover {
+    color: hsl(9, 34%, 69%);
 }
 
 .hero {
@@ -16,16 +23,49 @@ footer {
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
+    border-radius: 10px;
 }
+
+#area-cards {
+    background-color: rgb(224, 199, 195);
+    border-radius: 10px;
+}
+
+/* #taglineDisplay {
+    font-size: 40px;
+    text-align: left;
+    color: white;
+    font-family: 'Jomhuria', cursive;
+  } */
 
 .content ul li {
     list-style: none;
 }
 
-#trail-image {
-    height: 100px;
+.footer {
+    background-color: rgb(224, 199, 195);
+    border-radius: 10px;
 }
 
-#card-image {
-    height: 100px;
+.grow { 
+    transition: all .2s ease-in-out; 
+}
+    
+.grow:hover { 
+    transform: scale(1.05); 
+}
+  
+.is-on-right {
+    transform: translateX(-30px);
+}
+  
+.is-on-left {
+    transform: translateX(30px);
+}
+
+#overlay-cards {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    z-index: 1;
 }

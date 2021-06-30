@@ -1,8 +1,10 @@
-<p>
-  Explore the hiking trails of {{ locations.location_name }}, North Carolina!
-</p>
+<section class="section">
+    <p class="title is-3 has-text-white"> Explore the hiking trails of {{ locations.location_name }}, North Carolina!</p>
+  <p class="subtitle is-4 has-text-white">Click a trail card to view more.</p>
+</section>
 
-<div class="section">
+
+<div id="area-cards" class="section">
   <div class="container">
     <div class="columns is-multiline is-vcentered is-centered has-text-centered">
       {{#each locations.trails as |trail|}}
@@ -10,47 +12,6 @@
       {{/each}}
     </div>
   </div>
-</div>
-
-<div class="edit-trails-container">
-  <h2>
-    Submit a trail!
-  </h2>
-  <form class="edit-trails-form">
-    <label for="trail_name">
-      Trail Name:
-    </label>
-    <br />
-    <textarea id="trail_name" name="trail_name" rows="2" cols="30">
-      {{trail_name}}
-    </textarea>
-    <br />
-    <label for="distance">
-      Distance:
-    </label>
-    <br />
-    <textarea id="distance" name="distance" rows="5" cols="30">
-      {{distance}}
-    </textarea>
-    <br />
-    <label for="guest_name">
-      Guest Name:
-    </label>
-    <br />
-    <textarea id="guest_name" name="guest_name" rows="2" cols="30">
-      {{guest_name}}
-    </textarea>
-    <br />
-    <br />
-    <input type="checkbox" id="has_nuts" name="has_nuts" value="true" />
-    <label for="has_nuts">
-      Check box if this dish contains nuts
-    </label>
-    <br />
-    <button type="submit" value="Submit">
-      Submit
-    </button>
-  </form>
 </div>
 
 <div class="section">

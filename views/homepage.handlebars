@@ -1,8 +1,10 @@
-{{> navbar-hero }}
+<section>
+  {{> navbar-hero }}
+</section>
 
 <div class="section">
   <div class="container">
-    <div class="columns is-vcentered">
+    <div class="columns is-multiline is-vcentered">
       {{#each trails as |trail|}}
       {{> hp-trails-details}}
       {{/each}}
