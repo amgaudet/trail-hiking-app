@@ -46,10 +46,16 @@ router.get('/trailsgallery', async (req, res) => {
   res.render('trailsgallery', { locations })
 });
 
-router.get('/trail', async (req, res) => {
+router.get('/trail/:id', async (req, res) => {
   const getLocationData = await Location.findAll();
   const locations = getLocationData.map((location) => location.get({ plain: true }));
-  res.render('trail', { locations })
+
+  const trailData = await Trail.findByPk(req.params.id, {
+    include: [Feature, Gallery, Location]
+  });
+  const trail = trailData.get({ plain: true });
+
+  res.render('trail', { locations, trail })
 });
 
 router.get('/login', async (req, res) => {

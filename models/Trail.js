@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
-class Trail extends Model {}
+class Trail extends Model { }
 
 // sets up fields and rules for Trail model
 Trail.init(
@@ -18,50 +18,50 @@ Trail.init(
       allowNull: false,
     },
     distance: {
-        type: DataTypes.INTEGER,
-        decimalNumbers: true,
-        allowNull: false,
-        validate: {
-          isDecimal: true,
-        },
+      type: DataTypes.INTEGER,
+      decimalNumbers: true,
+      allowNull: false,
+      validate: {
+        isDecimal: true,
       },
+    },
     difficulty: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    }, 
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     dog_friendly: {
-        type: DataTypes.BOOLEAN, 
-        allowNull: false,
-        defaultValue: false,
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
     },
     elevation_gain: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
-      type: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    }, 
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    type: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
 
     location_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: "location",
-          key: "id",
-        },
+      type: DataTypes.INTEGER,
+      references: {
+        model: "location",
+        key: "id",
       },
+    },
 
-      latitude: {
-        type: DataTypes.INTEGER,
-  },
-  longitude: {
-    type: DataTypes.INTEGER,
-  },
+    latitude: {
+      type: DataTypes.DECIMAL(20, 17),
+    },
+    longitude: {
+      type: DataTypes.DECIMAL(20, 17),
+    },
     approved: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: false,
-    }, 
+    },
   },
   {
     sequelize,
