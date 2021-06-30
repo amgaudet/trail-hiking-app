@@ -1,0 +1,29 @@
+<div class="column is-3">
+  <a href="/trail/{{id}}">
+    <div class="card bm--card-equal-height">
+      <div class="card-header">
+        <p class="card-header-title is-centered">{{ trail_name }}</p>
+      </div>
+      <div id="card-image" class="card-image">
+        <figure id="trail-image" class="image">
+          <img src="{{ galleries.[0].url }}" alt="Trail Image">
+        </figure>
+      </div>
+      <div class="card-content pt-1">
+        <div class="content">
+          <ul>
+            <li>
+             <strong>Area: </strong>{{ location.location_name }}, NC
+            </li>
+            <li>
+             <strong>Distance: </strong> {{ distance }} miles
+            </li>
+            <li>
+            <strong>Difficulty Level: </strong> {{ difficulty }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
