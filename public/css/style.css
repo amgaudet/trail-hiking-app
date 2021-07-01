@@ -31,13 +31,6 @@ body {
     border-radius: 10px;
 }
 
-/* #taglineDisplay {
-    font-size: 40px;
-    text-align: left;
-    color: white;
-    font-family: 'Jomhuria', cursive;
-  } */
-
 .content ul li {
     list-style: none;
 }
@@ -68,4 +61,16 @@ body {
     flex-wrap: wrap;
     align-content: center;
     z-index: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+.empty {
+    display: none;
+}
+
+.empty p {
+    color: red;
 }

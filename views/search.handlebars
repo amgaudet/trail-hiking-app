@@ -3,19 +3,20 @@
   <p class="subtitle is-4 has-text-white">Click a trail card to view more.</p>
 </section>
 
-
-<div id="area-cards" class="section">
-  <div class="container">
-    <div class="columns is-multiline is-vcentered is-centered has-text-centered">
-      {{#each location.trails as |trail|}}
-      {{> search-details}}
-      {{/each}}
+<div class="section">
+  <div id="area-cards" class="section">
+    <div class="container">
+      <div class="columns is-multiline is-vcentered is-centered has-text-centered">
+        {{#each location.trails as |trail|}}
+        {{> search-details}}
+        {{/each}}
+      </div>
     </div>
   </div>
 </div>
 
 <div class="section">
-  {{!-- {{#if logged_in}}
+  {{#if logged_in}}
   <div class="card">
     <div class="card-content">
       <form id="new-trail-form" class="form">
@@ -25,7 +26,7 @@
             <div class="field">
               <strong>
                 <label for="trail_name">
-                  Trail Name:
+                  Trail Name:*
                 </label>
               </strong>
               <div class="control">
@@ -37,7 +38,7 @@
             <div class="field">
               <strong>
                 <label for="nc_city">
-                  NC City:
+                  NC City:*
                 </label>
               </strong>
               <div class="control">
@@ -49,7 +50,7 @@
             <div class="field">
               <strong>
                 <label for="distance">
-                  Distance:
+                  Distance:*
                 </label>
               </strong>
               <div class="control">
@@ -61,11 +62,11 @@
             <div class="field">
               <strong>
                 <label for="difficulty_level">
-                  Difficulty Level:
+                  Difficulty Level:*
                 </label>
               </strong>
               <div class="control">
-                <input type="text" id="distance" class="input" placeholder="Hard, Moderate, Easy">
+                <input type="text" id="difficulty_level" class="input" placeholder="Hard, Moderate, Easy">
                 {{difficulty_level}}
               </div>
             </div>
@@ -101,9 +102,15 @@
           </div>
         </div>
       </form>
+      <div class="hidden">
+        <p><strong>Thank you for your submission! Your trail will be reviewed shortly!</strong></p>
+      </div>
+      <div class="empty">
+        <p><strong>Please complete all input fields!</strong></p>
+      </div>
     </div>
   </div>
-  {{/if}} --}}
+  {{/if}}
 </div>
 
-<script src="/public/js/add-trail.js"></script>
+<script src="/js/add-trail.js"></script>
