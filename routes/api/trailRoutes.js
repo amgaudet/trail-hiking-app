@@ -70,6 +70,7 @@ router.post('/new', async (req, res) => {
       restrooms: req.body.restrooms,
       pet_friendly: req.body.pet_friendly,
     });
+    res.sendStatus(200);
   } catch (err) {
     res.status(400).json(err);
   };

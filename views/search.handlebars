@@ -16,7 +16,7 @@
 </div>
 
 <div class="section">
-  {{!-- {{#if logged_in}}
+  {{#if logged_in}}
   <div class="card">
     <div class="card-content">
       <form id="new-trail-form" class="form">
@@ -26,7 +26,7 @@
             <div class="field">
               <strong>
                 <label for="trail_name">
-                  Trail Name:
+                  Trail Name:*
                 </label>
               </strong>
               <div class="control">
@@ -38,7 +38,7 @@
             <div class="field">
               <strong>
                 <label for="nc_city">
-                  NC City:
+                  NC City:*
                 </label>
               </strong>
               <div class="control">
@@ -50,7 +50,7 @@
             <div class="field">
               <strong>
                 <label for="distance">
-                  Distance:
+                  Distance:*
                 </label>
               </strong>
               <div class="control">
@@ -62,7 +62,7 @@
             <div class="field">
               <strong>
                 <label for="difficulty_level">
-                  Difficulty Level:
+                  Difficulty Level:*
                 </label>
               </strong>
               <div class="control">
@@ -102,9 +102,15 @@
           </div>
         </div>
       </form>
+      <div class="hidden">
+        <p><strong>Thank you for your submission! Your trail will be reviewed shortly!</strong></p>
+      </div>
+      <div class="empty">
+        <p><strong>Please complete all input fields!</strong></p>
+      </div>
     </div>
   </div>
-  {{/if}} --}}
+  {{/if}}
 </div>
 
 <script src="/js/add-trail.js"></script>
