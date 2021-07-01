@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Trail } = require('../../models');
 
+
 //Create new login - auto creates session
 router.post('/', async (req, res) => {
   try {
@@ -13,7 +14,6 @@ router.post('/', async (req, res) => {
     //Begins new session with created log in
     req.session.save(() => {
       req.session.logged_in = true;
-
       res.status(200).json(userData);
     });
   } catch (err) {
@@ -23,7 +23,6 @@ router.post('/', async (req, res) => {
 
 //Log out - terminates session
 router.post('/logout', (req, res) => {
-  console.log('trying to log out')
   if (req.session.logged_in) {
     req.session.destroy(() => {
       res.status(204).end();
@@ -35,9 +34,9 @@ router.post('/logout', (req, res) => {
 
 router.put('/', async (req, res) => {
   const userData = await User.update({
-   UserTrails: req.body.UserTrails
+    UserTrails: req.body.UserTrails
   },
-  {where: {id: req.params.id}},
+    { where: { id: req.params.id } },
 
   );
   res.status(200).json(userData);
@@ -53,21 +52,21 @@ router.post('/login', async (req, res) => {
   });
   //Checks email exists in db
   if (!userData) {
-    res.status(400)
+    return res.status(400)
       .json({ message: "Incorrect email or password. Please try again" });
   };
 
   //Checks password matches with email
   const validate = await (await userData).checkPassword(req.body.password);
   if (!validate) {
-    res.status(400)
+
+    return res.status(400)
       .json({ message: "Incorrect email or password. Please try again" });
   };
 
   req.session.save(() => {
     req.session.user_id = userData.id
     req.session.logged_in = true;
-
     res.status(200).json(userData);
   });
 });

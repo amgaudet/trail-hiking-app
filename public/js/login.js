@@ -14,7 +14,7 @@ const loginUser = async (event) => {
     if (response.ok) {
       document.location.replace('/');
     } else {
-      alert('Failed to log in');
+      alert("Incorrect email or password. Please try again");
     }
   }
 };
